@@ -12,7 +12,10 @@ function App() {
 
   useEffect(() => {
     if (tiles.every((item) => item.isOn)) setSwitchTiles(true);
-    if (tiles.every((item) => !item.isOn)) setSwitchTiles(false);
+    if (tiles.every((item) => !item.isOn)){ 
+      setSwitchTiles(false)
+      setTilesOrder([])
+    }
   }, [tiles]);
 
   useEffect(() => {
@@ -45,6 +48,7 @@ function App() {
       setTilesOrder([...tilesOrder, updateTiles[index].id]);
     }
   };
+console.log(tilesOrder);
 
   return (
     <div className="container h-screen grid place-items-center ">
